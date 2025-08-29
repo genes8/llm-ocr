@@ -1,0 +1,19 @@
+# Core OCR dependencies
+pillow>=10.0.0
+pytesseract>=0.3.10
+
+# API requests for LLM processing
+requests>=2.31.0
+
+# Flask web framework
+flask>=2.3.0
+flask-cors>=4.0.0
+
+# File upload handling
+werkzeug>=2.3.0
+
+# JSON handling and utilities
+python-dotenv>=1.0.0
+
+# Optional: For better performance and production deployment
+gunicorn>=21.2.0
