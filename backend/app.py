@@ -60,7 +60,7 @@ def upload_file():
             return jsonify({'error': 'No file provided'}), 400
         
         file = request.files['file']
-        if file.filename == '':
+        if not file or not file.filename or file.filename == '':
             return jsonify({'error': 'No file selected'}), 400
         
         if not allowed_file(file.filename):

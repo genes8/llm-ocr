@@ -130,12 +130,12 @@ def ocr_to_markdown(image_path: Path, lang: str) -> str:
     
     # Try OCR with specified language, fallback to English if language pack missing
     try:
-        text = pytesseract.image_to_string(img, lang=lang or "eng")
+        text = str(pytesseract.image_to_string(img, lang=lang or "eng"))
     except pytesseract.TesseractError as e:
         if "Failed loading language" in str(e):
             print(f"Warning: Language '{lang}' not available. Falling back to English.")
             print(f"To install language packs on macOS: brew install tesseract-lang")
-            text = pytesseract.image_to_string(img, lang="eng")
+            text = str(pytesseract.image_to_string(img, lang="eng"))
         else:
             raise e
     # Basic Markdown normalization
